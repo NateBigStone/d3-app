@@ -7,17 +7,32 @@ function getData() {
     let numItems = 20 + Math.floor(20 * Math.random())
     let data = []
     for(let i=0; i<numItems; i++) {
+        let xRand = Math.random()
+        let yRand = Math.random()
+        let rRand = Math.random()
         data.push({
-            x: Math.random(),
-            y: Math.random(),
-            r: Math.random(),
-            color: i % 5
+           x: xRand,
+           y: yRand,
+           r: rRand,
+           color: 0
         })
+        data.push({
+           x: xRand,
+           y: yRand,
+           r: (rRand*.66),
+           color: 1
+        })    
+        data.push({
+           x: xRand,
+           y: yRand,
+           r: (rRand*.36),
+           color: 0
+        })             
     }
     return data
 }
 
-let colors = ['#2176ae', '#57b8ff', '#b66d0d', '#fbb13c', '#fe6847']
+let colors = ['#cc0000', '#ffffff']
 
 class Map extends React.Component {
     constructor(props) {
